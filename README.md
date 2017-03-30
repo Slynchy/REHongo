@@ -1,6 +1,8 @@
 # REhongo
 An API for transliterating Japanese characters using http://nihongo.j-talk.com/
 
+Requires HtmlAgilityPack. Simply include the .cs into your project and follow instructions.
+
 # Instructions
 	// Create an instance of REHongo
 	REHongo rehongo = new REHongo();
