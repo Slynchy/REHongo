@@ -112,25 +112,3 @@ class REHongo
         return sb.ToString();
     }
 }
-
-class Program
-{
-    static void Main(string[] args)
-    {
-        // Create an instance of REHongo
-        REHongo rehongo = new REHongo();
-
-        // Either simply give it a string to transliterate
-        string result = rehongo.Translate("日本語").Result; // output: 日本語(nihongo)
-
-        // Or give it a custom packet
-        REHongo_packet temp = new REHongo_packet("日本語", REHongo_packet.OUTPUT.HIRAGANA);
-        result = rehongo.Translate(temp).Result; // output: 日本語(にほんご) 
-
-        using (StreamWriter sw = new StreamWriter(File.Open("test.txt", FileMode.Create), Encoding.UTF8))
-        {
-            sw.WriteLine(result);
-        }
-        Console.ReadKey();
-    }
-}
